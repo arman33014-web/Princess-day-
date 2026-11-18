@@ -1,0 +1,286 @@
+@import "tailwindcss";
+
+:root {
+  --pink-primary: #f5a6c8;
+  --pink-soft: #ffe1ec;
+  --cream-bg: #fff7fa;
+  --surface-white: #ffffff;
+  --rose-gold: #dda0a8;
+  --soft-gold: #e8c77b;
+  --ink-primary: #68485a;
+  --ink-secondary: #7e576d;
+  --ink-muted: #a77b91;
+}
+
+@theme inline {
+  --color-background: var(--cream-bg);
+  --color-foreground: var(--ink-primary);
+  --color-pink-primary: var(--pink-primary);
+  --color-pink-soft: var(--pink-soft);
+  --color-rose-gold: var(--rose-gold);
+  --color-soft-gold: var(--soft-gold);
+  --color-ink-primary: var(--ink-primary);
+  --color-ink-secondary: var(--ink-secondary);
+  --color-ink-muted: var(--ink-muted);
+  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-poppins), system-ui, -apple-system, sans-serif;
+  --font-script: var(--font-handwriting), Georgia, cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--cream-bg);
+  color: var(--ink-primary);
+  overflow-x: clip;
+}
+
+body {
+  background-color: var(--cream-bg);
+  background-image:
+    radial-gradient(circle at 12% 14%, rgba(255, 225, 236, 0.55) 0%, transparent 36%),
+    radial-gradient(circle at 88% 34%, rgba(245, 166, 200, 0.22) 0%, transparent 38%),
+    radial-gradient(circle at 20% 78%, rgba(255, 225, 236, 0.45) 0%, transparent 40%);
+  color: var(--ink-primary);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Storybook Decorative Card Styling */
+.storybook-card {
+  background-color: rgba(255, 255, 255, 0.96);
+  border: 1.5px solid rgba(232, 199, 123, 0.62);
+  box-shadow:
+    0 18px 42px -18px rgba(173, 108, 140, 0.2),
+    0 3px 12px -3px rgba(245, 166, 200, 0.24),
+    inset 0 0 0 5px rgba(255, 247, 250, 0.92),
+    inset 0 0 0 6px rgba(232, 199, 123, 0.25);
+  transition:
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.storybook-card:hover {
+  border-color: rgba(221, 160, 168, 0.78);
+  box-shadow:
+    0 22px 48px -18px rgba(173, 108, 140, 0.24),
+    0 4px 16px -3px rgba(245, 166, 200, 0.28),
+    inset 0 0 0 5px rgba(255, 247, 250, 0.95),
+    inset 0 0 0 6px rgba(232, 199, 123, 0.36);
+}
+
+/* Handwritten Stationery Paper */
+.storybook-paper {
+  background-color: #fffdfe;
+  background-image:
+    linear-gradient(
+      to bottom,
+      transparent 31px,
+      rgba(245, 166, 200, 0.13) 32px
+    ),
+    radial-gradient(rgba(232, 199, 123, 0.12) 1px, transparent 1px);
+  background-size: 100% 32px, 24px 24px;
+  border: 1.5px solid rgba(232, 199, 123, 0.72);
+  box-shadow:
+    0 24px 56px -20px rgba(140, 82, 112, 0.24),
+    inset 0 0 0 7px #ffffff,
+    inset 0 0 0 8.5px rgba(232, 199, 123, 0.45);
+}
+
+.royal-pill {
+  background-color: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(232, 199, 123, 0.68);
+  box-shadow: 0 6px 20px -8px rgba(167, 123, 145, 0.28);
+}
+
+/* Accessible Focus Styles */
+:focus-visible {
+  outline: 2.5px solid #c96b98;
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* Lightweight CSS Keyframes (GPU-composited transform & opacity only) */
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes driftCloud {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(20px, -3px, 0);
+  }
+}
+
+@keyframes driftCloudReverse {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-18px, 4px, 0);
+  }
+}
+
+@keyframes twinkleStar {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.86);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.14);
+  }
+}
+
+@keyframes flutterFlight {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-3deg);
+  }
+  33% {
+    transform: translate3d(12px, -13px, 0) rotate(5deg);
+  }
+  66% {
+    transform: translate3d(-9px, -6px, 0) rotate(-2deg);
+  }
+}
+
+@keyframes petalFall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.76;
+  }
+  85% {
+    opacity: 0.68;
+  }
+  100% {
+    transform: translate3d(48px, 106vh, 0) rotate(280deg);
+    opacity: 0;
+  }
+}
+
+@keyframes heartFloat {
+  0% {
+    transform: translate3d(0, 18px, 0) scale(0.82);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.72;
+  }
+  100% {
+    transform: translate3d(12px, -84px, 0) scale(1.12);
+    opacity: 0;
+  }
+}
+
+@keyframes musicBar {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fountainSparkle {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translate3d(0, 4px, 0) scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: translate3d(0, -6px, 0) scale(1.1);
+  }
+}
+
+@keyframes bgBreath {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.82;
+    transform: scale(1.04);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5.5s ease-in-out infinite;
+}
+
+.animate-drift-cloud {
+  animation: driftCloud 15s ease-in-out infinite;
+}
+
+.animate-drift-cloud-reverse {
+  animation: driftCloudReverse 17s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkleStar 3.4s ease-in-out infinite;
+}
+
+.animate-flutter {
+  animation: flutterFlight 7.2s ease-in-out infinite;
+}
+
+.animate-petal {
+  animation: petalFall 14s linear infinite;
+}
+
+.animate-heart-float {
+  animation: heartFloat 4.8s ease-in-out infinite;
+}
+
+.animate-music-bar {
+  transform-origin: bottom center;
+  animation: musicBar 0.9s ease-in-out infinite;
+}
+
+.animate-fountain-sparkle {
+  animation: fountainSparkle 2.4s ease-in-out infinite;
+}
+
+.animate-bg-breath {
+  animation: bgBreath 9s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-float-slow,
+  .animate-drift-cloud,
+  .animate-drift-cloud-reverse,
+  .animate-twinkle,
+  .animate-flutter,
+  .animate-petal,
+  .animate-heart-float,
+  .animate-music-bar,
+  .animate-fountain-sparkle,
+  .animate-bg-breath {
+    animation: none !important;
+  }
+}
